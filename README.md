@@ -22,9 +22,43 @@ finalgame_ml/
 │ └─ inference/ # 실시간 추론 코드
 │ └─ real_time_prediction.py
 ├─ trained_models/ # 학습 완료된 모델 파일
-│ ├─ cnn_model_bothhands.keras
-│ └─ dynamic_gesture_model3.h5
-├─ results/ # 평가 및 시각화 자료
-│ 
+│ ├─ cnn_mode.h5
+│ └─ lstm_model.h5
 └─ requirements.txt
+```
+---
+## 실행 방법
+```bash
+# 1. 저장소 클론 후 이동
+git clone https://github.com/kimheeyeon1/Finalgame_ML.git
+cd Finalgame_ML
+
+# 2. 가상환경 생성/활성화
+python -m venv venv
+venv\Scripts\activate
+
+# 3. 의존성 설치
+pip install --upgrade pip
+pip install -r requirements.txt
+
+# 4. 모델 파일 준비
+cnn_model.h5와 lstm_model.h5를 trained_models/ 폴더에 넣습니다.
+경로 예시:
+Finalgame_ML/
+├─ trained_models/
+│  ├─ cnn_model.h5
+│  └─ lstm_model.h5
+
+5. 실행
+python src/inference/real_time_inference.py
+
+6. 사용 방법
+웹캠이 켜지고 실시간 수어 인식 시작
+화면 표시:
+인식된 단어 + 모델 유형
+트래젝토리 변화량
+기록된 단어(문장)
+단축키:
+q : 프로그램 종료
+c : 문장 초기화
 ```
